@@ -132,7 +132,7 @@ class CustomFooter extends HTMLElement {
                                     </div>
                                     <div>
                                         <p class="text-white font-medium">Phone</p>
-                                        <a href="tel:+254700123456" class="text-gray-300 hover:text-gold-300 transition duration-300 text-sm">+254 700 123456</a>
+                                        <a href="tel:+254722892232" class="text-gray-300 hover:text-gold-300 transition duration-300 text-sm">+254 722 892232</a>
                                     </div>
                                 </div>
                                 

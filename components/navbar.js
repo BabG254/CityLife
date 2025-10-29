@@ -33,7 +33,7 @@ class CustomNavbar extends HTMLElement {
 
                         <!-- CTA Button -->
                         <div class="hidden md:flex items-center space-x-4">
-                            <a href="tel:+254700123456" class="text-gold-600 hover:text-gold-700 transition duration-300">
+                            <a href="tel:+254722892232" class="text-gold-600 hover:text-gold-700 transition duration-300">
                                 <i data-feather="phone" class="w-5 h-5"></i>
                             </a>
                             <a href="mailto:info@cityliferealestate.co.ke" class="text-gold-600 hover:text-gold-700 transition duration-300">
@@ -45,7 +45,14 @@ class CustomNavbar extends HTMLElement {
                         </div>
 
                         <!-- Mobile Menu Button -->
-                        <div class="md:hidden">
+                        <div class="md:hidden flex items-center space-x-3 mobile-contact-buttons">
+                            <!-- Mobile Email & Call Buttons -->
+                            <a href="tel:+254722892232" class="bg-gold-500 text-black p-2 rounded-full hover:bg-gold-600 transition duration-300">
+                                <i data-feather="phone" class="w-4 h-4"></i>
+                            </a>
+                            <a href="mailto:info@cityliferealestate.co.ke" class="bg-gold-500 text-black p-2 rounded-full hover:bg-gold-600 transition duration-300">
+                                <i data-feather="mail" class="w-4 h-4"></i>
+                            </a>
                             <button id="mobile-menu-toggle" class="text-gray-700 hover:text-gold-600 focus:outline-none">
                                 <i data-feather="menu" class="w-6 h-6"></i>
                             </button>
@@ -112,7 +119,7 @@ class CustomNavbar extends HTMLElement {
                                 <div class="space-y-4">
                                     <div class="flex items-center space-x-3">
                                         <i data-feather="phone" class="w-5 h-5 text-gold-600"></i>
-                                        <a href="tel:+254700123456" class="text-gray-700">+254 700 123456</a>
+                                        <a href="tel:+254722892232" class="text-gray-700">+254 722 892232</a>
                                     </div>
                                     <div class="flex items-center space-x-3">
                                         <i data-feather="mail" class="w-5 h-5 text-gold-600"></i>

@@ -494,3 +494,66 @@
   position: relative;
   z-index: 1;
 }
+
+/* Mobile Navigation Enhancements */
+@media (max-width: 768px) {
+  /* Mobile contact buttons styling */
+  .mobile-contact-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .mobile-contact-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mobile-contact-buttons a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Ensure navbar stays properly positioned on mobile */
+  nav {
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 50 !important;
+    background: white !important;
+  }
+  
+  /* Add top padding to body to account for fixed navbar */
+  body {
+    padding-top: 80px;
+  }
+  
+  /* Ensure main content is not hidden behind navbar */
+  main, .hero-section, section:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  /* Mobile menu improvements */
+  .mobile-menu {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+  }
+}
+
+/* Desktop Navigation - Hide mobile buttons */
+@media (min-width: 769px) {
+  .mobile-contact-buttons {
+    display: none;
+  }
+  
+  body {
+    padding-top: 0;
+  }
+}
