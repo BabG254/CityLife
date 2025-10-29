@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties - CityLife Real Estate Ltd | Premium Properties Across Kenya</title>
+    <meta name="description" content="Browse our extensive portfolio of premium residential and commercial properties for sale and rent across Nairobi, Kiambu, Mombasa, and other key locations in Kenya.">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="shortcut icon" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-montserrat bg-white text-gray-800">
+    <custom-navbar></custom-navbar>
+
+    <!-- Hero Section -->
+    <section class="relative py-32 bg-gradient-to-r from-black via-gray-900 to-black overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Luxury Properties" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 container mx-auto px-4">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-6xl font-playfair font-bold text-white mb-6 reveal animate-fadeInLeft">
+                    Premium Properties
+                </h1>
+                <p class="text-xl text-gold-300 mb-8 reveal animate-fadeInLeft">
+                    Discover Your Perfect Property in Kenya
+                </p>
+                <p class="text-lg text-gray-300 mb-12 leading-relaxed reveal animate-fadeInLeft">
+                    Browse our extensive portfolio of premium residential and commercial properties 
+                    across Kenya's most desirable locations. From luxury apartments to commercial spaces, 
+                    find your ideal property today.
+                </p>
+                
+                <!-- Quick Search -->
+                <div class="bg-white p-6 rounded-lg shadow-xl max-w-2xl reveal animate-fadeInLeft">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <select class="border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-500" data-filter="location">
+                            <option value="">All Locations</option>
+                            <option value="nairobi">Nairobi</option>
+                            <option value="kiambu">Kiambu</option>
+                            <option value="mombasa">Mombasa</option>
+                            <option value="nakuru">Nakuru</option>
+                            <option value="thika">Thika</option>
+                        </select>
+                        <select class="border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-500" data-filter="type">
+                            <option value="">All Types</option>
+                            <option value="residential">Residential</option>
+                            <option value="commercial">Commercial</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="villa">Villa</option>
+                            <option value="office">Office</option>
+                        </select>
+                        <button class="bg-gold-500 hover:bg-gold-600 text-black font-semibold px-6 py-3 rounded transition duration-300" onclick="filterProperties()">
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-8 bg-gray-50 sticky top-16 z-40">
+        <div class="container mx-auto px-4">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <!-- Filter Controls -->
+                    <div class="flex flex-wrap items-center gap-4">
+                        <div class="flex items-center space-x-2">
+                            <label class="text-sm font-medium text-gray-700">Status:</label>
+                            <select class="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gold-500" data-filter="status">
+                                <option value="">All</option>
+                                <option value="sale">For Sale</option>
+                                <option value="rent">For Rent</option>
+                            </select>
+                        </div>
+                        
+                        <div class="flex items-center space-x-2">
+                            <label class="text-sm font-medium text-gray-700">Price Range:</label>
+                            <select class="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gold-500" data-filter="price">
+                                <option value="">Any Price</option>
+                                <option value="0-10000000">Under KSH 10M</option>
+                                <option value="10000000-65000000">KSH 10M - 65M</option>
+                                <option value="65000000-130000000">KSH 65M - 130M</option>
+                                <option value="130000000-99999999999">Above KSH 130M</option>
+                            </select>
+                        </div>
+                        
+                        <div class="flex items-center space-x-2">
+                            <label class="text-sm font-medium text-gray-700">Bedrooms:</label>
+                            <select class="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gold-500" data-filter="bedrooms">
+                                <option value="">Any</option>
+                                <option value="1">1+</option>
+                                <option value="2">2+</option>
+                                <option value="3">3+</option>
+                                <option value="4">4+</option>
+                                <option value="5">5+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- View Controls -->
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2">
+                            <button id="grid-view" class="p-2 border rounded hover:bg-gray-100 transition duration-300 active">
+                                <i data-feather="grid" class="w-4 h-4"></i>
+                            </button>
+                            <button id="list-view" class="p-2 border rounded hover:bg-gray-100 transition duration-300">
+                                <i data-feather="list" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                        
+                        <select class="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gold-500" data-filter="sort">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                        </select>
+                        
+                        <span class="text-sm text-gray-600" id="results-count">24 Properties Found</span>
+                    </div>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="mt-4">
+                    <div class="relative">
+                        <input type="text" placeholder="Search by property name, location, or features..." 
+                               class="w-full px-4 py-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
+                               data-filter="search">
+                        <i data-feather="search" class="absolute left-3 top-3 text-gray-400 w-5 h-5"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Grid -->
+    <section class="py-12 bg-white properties-section">
+        <div class="container mx-auto px-4">
+            <div id="properties-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Property 1 -->
+                <div class="property-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300" 
+                     data-location="nairobi" data-type="apartment" data-status="sale" data-price="450000" data-bedrooms="4">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kileleshwa Heights" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-gold-500 text-black font-semibold px-3 py-1 rounded">For Sale</div>
+                        <div class="absolute top-4 left-4 bg-black bg-opacity-50 text-white px-3 py-1 rounded text-sm">Featured</div>
+                        <button class="absolute bottom-4 right-4 bg-white text-gray-700 p-2 rounded-full hover:bg-gray-100 transition duration-300 favorite-btn" data-property-id="1">
+                            <i data-feather="heart" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-black">Kileleshwa Heights</h3>
+                        <p class="text-gray-600 mb-4 flex items-center">
+                            <i data-feather="map-pin" class="mr-2 w-4 h-4"></i> 
+                            Kileleshwa, Nairobi
+                        </p>
+                        <div class="grid grid-cols-3 gap-4 mb-4 text-center">
+                            <div>
+                                <p class="text-sm text-gray-500">Bedrooms</p>
+                                <p class="font-semibold">4</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Bathrooms</p>
+                                <p class="font-semibold">3</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Area</p>
+                                <p class="font-semibold">3200 sqft</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">Swimming Pool</span>
+                                <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">Parking</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <p class="text-gold-600 font-bold text-xl">KSH 58,500,000</p>
+                            <div class="flex space-x-2">
+                                <button class="text-gray-600 hover:text-gold-600 transition duration-300" data-tooltip="Add to Compare">
+                                    <i data-feather="plus-circle" class="w-5 h-5"></i>
+                                </button>
+                                <button class="text-gray-600 hover:text-gold-600 transition duration-300" onclick="openPropertyModal('1')">
+                                    <i data-feather="eye" class="w-5 h-5"></i>
+                                </button>
+                                <a href="#" class="text-gray-600 hover:text-gold-600 transition duration-300">
+                                    <i data-feather="arrow-right-circle" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 2 -->
+                <div class="property-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300" 
+                     data-location="nairobi" data-type="office" data-status="rent" data-price="8500" data-bedrooms="0">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Westlands Office Park" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-black text-white font-semibold px-3 py-1 rounded">For Rent</div>
+                        <button class="absolute bottom-4 right-4 bg-white text-gray-700 p-2 rounded-full hover:bg-gray-100 transition duration-300 favorite-btn" data-property-id="2">
+                            <i data-feather="heart" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-black">Westlands Office Park</h3>
+                        <p class="text-gray-600 mb-4 flex items-center">
+                            <i data-feather="map-pin" class="mr-2 w-4 h-4"></i> 
+                            Westlands, Nairobi
+                        </p>
+                        <div class="grid grid-cols-3 gap-4 mb-4 text-center">
+                            <div>
+                                <p class="text-sm text-gray-500">Units</p>
+                                <p class="font-semibold">12</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Floors</p>
+                                <p class="font-semibold">4</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Parking</p>
+                                <p class="font-semibold">50 Slots</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">24/7 Security</span>
+                                <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">Elevator</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <p class="text-gold-600 font-bold text-xl">KSH 1,105,000/mo</p>
+                            <div class="flex space-x-2">
+                                <button class="text-gray-600 hover:text-gold-600 transition duration-300" data-tooltip="Add to Compare">
+                                    <i data-feather="plus-circle" class="w-5 h-5"></i>
+                                </button>
+                                <button class="text-gray-600 hover:text-gold-600 transition duration-300" onclick="openPropertyModal('2')">
+                                    <i data-feather="eye" class="w-5 h-5"></i>
+                                </button>
+                                <a href="#" class="text-gray-600 hover:text-gold-600 transition duration-300">
+                                    <i data-feather="arrow-right-circle" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 3 -->
+                <div class="property-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300" 
+                     data-location="nairobi" data-type="villa" data-status="sale" data-price="1200000" data-bedrooms="5">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Karen Villa" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-gold-500 text-black font-semibold px-3 py-1 rounded">For Sale</div>
+                        <div class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded text-sm">Luxury</div>
+                        <button class="absolute bottom-4 right-4 bg-white text-gray-700 p-2 rounded-full hover:bg-gray-100 transition duration-300 favorite-btn" data-property-id="3">
+                            <i data-feather="heart" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-black">Karen Villa</h3>
+                        <p class="text-gray-600 mb-4 flex items-center">
+                            <i data-feather="map-pin" class="mr-2 w-4 h-4"></i> 
+                            Karen, Nairobi
+                        </p>
+                        <div class="grid grid-cols-3 gap-4 mb-4 text-center">
+                            <div>
+                                <p class="text-sm text-gray-500">Bedrooms</p>
+                                <p class="font-semibold">5</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Bathrooms</p>
+                                <p class="font-semibold">4</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Area</p>
+                                <p class="font-semibold">1.2 acres</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">Garden</span>
+                                <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">Pool</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <p class="text-gold-600 font-bold text-xl">KSH 156,000,000</p>
+                            <div class="flex space-x-2">
+                                <button class="text-gray-600 hover:text-gold-600 transition duration-300" data-tooltip="Add to Compare">
+                                    <i data-feather="plus-circle" class="w-5 h-5"></i>
+                                </button>
+                                <button class="text-gray-600 hover:text-gold-600 transition duration-300" onclick="openPropertyModal('3')">
+                                    <i data-feather="eye" class="w-5 h-5"></i>
+                                </button>
+                                <a href="#" class="text-gray-600 hover:text-gold-600 transition duration-300">
+                                    <i data-feather="arrow-right-circle" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 4 -->
+                <div class="property-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300" 
+                     data-location="kiambu" data-type="apartment" data-status="rent" data-price="1500" data-bedrooms="2">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Runda Apartments" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-black text-white font-semibold px-3 py-1 rounded">For Rent</div>
+                        <button class="absolute bottom-4 right-4 bg-white text-gray-700 p-2 rounded-full hover:bg-gray-100 transition duration-300 favorite-btn" data-property-id="4">
+                            <i data-feather="heart" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-black">Runda Apartments</h3>
+                        <p class="text-gray-600 mb-4 flex items-center">
+                            <i data-feather="map-pin" class="mr-2 w-4 h-4"></i> 
+                            Runda, Kiambu
+                        </p>
+                        <div class="grid grid-cols-3 gap-4 mb-4 text-center">
+                            <div>
+                                <p class="text-sm text-gray-500">Bedrooms</p>
+                                <p class="font-semibold">2</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Bathrooms</p>
+                                <p class="font-semibold">2</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Area</p>
+                                <p class="font-semibold">1200 sqft</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">Balcony</span>
+                                <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">Gym</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <p class="text-gold-600 font-bold text-xl">KSH 195,000/mo</p>
+                            <div class="flex space-x-2">
+                                <button class="text-gray-600 hover:text-gold-600 transition duration-300" data-tooltip="Add to Compare">
+                                    <i data-feather="plus-circle" class="w-5 h-5"></i>
+                                </button>
+                                <button class="text-gray-600 hover:text-gold-600 transition duration-300" onclick="openPropertyModal('4')">
+                                    <i data-feather="eye" class="w-5 h-5"></i>
+                                </button>
+                                <a href="#" class="text-gray-600 hover:text-gold-600 transition duration-300">
+                                    <i data-feather="arrow-right-circle" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 5 -->
+                <div class="property-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300" 
+                     data-location="mombasa" data-type="apartment" data-status="sale" data-price="350000" data-bedrooms="3">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nyali Beach Apartment" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-gold-500 text-black font-semibold px-3 py-1 rounded">For Sale</div>
+                        <div class="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded text-sm">Beachfront</div>
+                        <button class="absolute bottom-4 right-4 bg-white text-gray-700 p-2 rounded-full hover:bg-gray-100 transition duration-300 favorite-btn" data-property-id="5">
+                            <i data-feather="heart" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-black">Nyali Beach Apartment</h3>
+                        <p class="text-gray-600 mb-4 flex items-center">
+                            <i data-feather="map-pin" class="mr-2 w-4 h-4"></i> 
+                            Nyali, Mombasa
+                        </p>
+                        <div class="grid grid-cols-3 gap-4 mb-4 text-center">
+                            <div>
+                                <p class="text-sm text-gray-500">Bedrooms</p>
+                                <p class="font-semibold">3</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Bathrooms</p>
+                                <p class="font-semibold">2</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Area</p>
+                                <p class="font-semibold">1800 sqft</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">Ocean View</span>
+                                <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">Pool</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <p class="text-gold-600 font-bold text-xl">KSH 45,500,000</p>
+                            <div class="flex space-x-2">
+                                <button class="text-gray-600 hover:text-gold-600 transition duration-300" data-tooltip="Add to Compare">
+                                    <i data-feather="plus-circle" class="w-5 h-5"></i>
+                                </button>
+                                <button class="text-gray-600 hover:text-gold-600 transition duration-300" onclick="openPropertyModal('5')">
+                                    <i data-feather="eye" class="w-5 h-5"></i>
+                                </button>
+                                <a href="#" class="text-gray-600 hover:text-gold-600 transition duration-300">
+                                    <i data-feather="arrow-right-circle" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 6 -->
+                <div class="property-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300" 
+                     data-location="nakuru" data-type="commercial" data-status="rent" data-price="3500" data-bedrooms="0">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nakuru Commercial Space" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-black text-white font-semibold px-3 py-1 rounded">For Rent</div>
+                        <button class="absolute bottom-4 right-4 bg-white text-gray-700 p-2 rounded-full hover:bg-gray-100 transition duration-300 favorite-btn" data-property-id="6">
+                            <i data-feather="heart" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-black">Nakuru Commercial Space</h3>
+                        <p class="text-gray-600 mb-4 flex items-center">
+                            <i data-feather="map-pin" class="mr-2 w-4 h-4"></i> 
+                            Milimani, Nakuru
+                        </p>
+                        <div class="grid grid-cols-3 gap-4 mb-4 text-center">
+                            <div>
+                                <p class="text-sm text-gray-500">Area</p>
+                                <p class="font-semibold">2500 sqft</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Parking</p>
+                                <p class="font-semibold">10 Slots</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Type</p>
+                                <p class="font-semibold">Retail</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">Ground Floor</span>
+                                <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">High Traffic</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <p class="text-gold-600 font-bold text-xl">KSH 455,000/mo</p>
+                            <div class="flex space-x-2">
+                                <button class="text-gray-600 hover:text-gold-600 transition duration-300" data-tooltip="Add to Compare">
+                                    <i data-feather="plus-circle" class="w-5 h-5"></i>
+                                </button>
+                                <button class="text-gray-600 hover:text-gold-600 transition duration-300" onclick="openPropertyModal('6')">
+                                    <i data-feather="eye" class="w-5 h-5"></i>
+                                </button>
+                                <a href="#" class="text-gray-600 hover:text-gold-600 transition duration-300">
+                                    <i data-feather="arrow-right-circle" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button onclick="loadMoreProperties()" class="bg-gold-500 hover:bg-gold-600 text-black font-semibold px-8 py-3 rounded transition duration-300">
+                    <i data-feather="plus" class="inline w-5 h-5 mr-2"></i>
+                    Load More Properties
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-black text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl font-playfair font-bold mb-6">Didn't Find What You're Looking For?</h2>
+                <p class="text-xl text-gray-300 mb-8">
+                    Our team can help you find the perfect property that matches your specific requirements.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="bg-gold-500 hover:bg-gold-600 text-black font-semibold px-8 py-4 rounded transition duration-300">
+                        Contact Our Agents
+                    </a>
+                    <a href="contact.html?request=custom-search" class="border-2 border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-black font-semibold px-8 py-4 rounded transition duration-300">
+                        Request Custom Search
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Modal -->
+    <div id="property-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
+                <!-- Modal content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/254700123456" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 z-50 no-print">
+        <i data-feather="message-circle" class="w-6 h-6"></i>
+    </a>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        // Ensure all scripts are loaded before initializing
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize feather icons
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
+            
+            // Re-initialize property filters specifically for this page
+            initializePropertyFiltersForPage();
+        });
+        
+        // Page-specific property filter initialization
+        function initializePropertyFiltersForPage() {
+            const filters = document.querySelectorAll('select[data-filter], input[data-filter]');
+            
+            filters.forEach(filter => {
+                filter.addEventListener('change', filterProperties);
+            });
+            
+            const searchInput = document.querySelector('input[data-filter="search"]');
+            if (searchInput) {
+                searchInput.addEventListener('input', debounce(filterProperties, 300));
+            }
+        }
+        
+        // Debounce function
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+        
+        // Property-specific JavaScript
+        function openPropertyModal(propertyId) {
+            const modal = document.getElementById('property-modal');
+            
+            // Sample property data - in real app, this would come from API
+            const propertyData = {
+                '1': {
+                    title: 'Kileleshwa Heights',
+                    location: 'Kileleshwa, Nairobi',
+                    price: 'KSH 58,500,000',
+                    images: [
+                        'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                        'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                        'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+                    ],
+                    bedrooms: 4,
+                    bathrooms: 3,
+                    area: '3200 sqft',
+                    description: 'Luxurious 4-bedroom apartment in the heart of Kileleshwa with modern amenities and stunning city views.',
+                    features: ['Swimming Pool', 'Parking', 'Security', 'Balcony', 'Modern Kitchen']
+                }
+            };
+            
+            const property = propertyData[propertyId];
+            
+            if (property) {
+                modal.innerHTML = `
+                    <div class="flex items-center justify-center min-h-screen p-4">
+                        <div class="bg-white rounded-lg max-w-4xl w-full">
+                            <div class="flex justify-between items-center p-6 border-b">
+                                <h2 class="text-2xl font-bold">${property.title}</h2>
+                                <button onclick="closePropertyModal()" class="text-gray-500 hover:text-gray-700">
+                                    <i data-feather="x" class="w-6 h-6"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="p-6">
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                    <div>
+                                        <img src="${property.images[0]}" alt="${property.title}" class="w-full h-64 object-cover rounded-lg mb-4">
+                                        <div class="grid grid-cols-3 gap-2">
+                                            ${property.images.slice(1).map(img => `<img src="${img}" alt="Property" class="w-full h-20 object-cover rounded">`).join('')}
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <p class="text-gray-600 mb-4 flex items-center">
+                                            <i data-feather="map-pin" class="mr-2 w-4 h-4"></i> 
+                                            ${property.location}
+                                        </p>
+                                        
+                                        <div class="grid grid-cols-3 gap-4 mb-6">
+                                            <div class="text-center p-4 bg-gray-50 rounded">
+                                                <p class="text-sm text-gray-500">Bedrooms</p>
+                                                <p class="font-semibold text-lg">${property.bedrooms}</p>
+                                            </div>
+                                            <div class="text-center p-4 bg-gray-50 rounded">
+                                                <p class="text-sm text-gray-500">Bathrooms</p>
+                                                <p class="font-semibold text-lg">${property.bathrooms}</p>
+                                            </div>
+                                            <div class="text-center p-4 bg-gray-50 rounded">
+                                                <p class="text-sm text-gray-500">Area</p>
+                                                <p class="font-semibold text-lg">${property.area}</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <p class="text-gold-600 font-bold text-3xl mb-6">${property.price}</p>
+                                        
+                                        <p class="text-gray-700 mb-6">${property.description}</p>
+                                        
+                                        <div class="mb-6">
+                                            <h4 class="font-bold mb-3">Features</h4>
+                                            <div class="flex flex-wrap gap-2">
+                                                ${property.features.map(feature => `<span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">${feature}</span>`).join('')}
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="space-y-3">
+                                            <button class="w-full bg-gold-500 hover:bg-gold-600 text-black font-semibold py-3 rounded transition duration-300">
+                                                Schedule Viewing
+                                            </button>
+                                            <button class="w-full border-2 border-gold-500 text-gold-600 hover:bg-gold-500 hover:text-black font-semibold py-3 rounded transition duration-300">
+                                                Contact Agent
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                modal.classList.remove('hidden');
+                feather.replace();
+            }
+        }
+        
+        function closePropertyModal() {
+            document.getElementById('property-modal').classList.add('hidden');
+        }
+        
+        // View toggle functionality
+        document.getElementById('grid-view').addEventListener('click', function() {
+            const grid = document.getElementById('properties-grid');
+            grid.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8';
+            this.classList.add('bg-gold-500', 'text-white');
+            document.getElementById('list-view').classList.remove('bg-gold-500', 'text-white');
+        });
+        
+        document.getElementById('list-view').addEventListener('click', function() {
+            const grid = document.getElementById('properties-grid');
+            grid.className = 'space-y-6';
+            this.classList.add('bg-gold-500', 'text-white');
+            document.getElementById('grid-view').classList.remove('bg-gold-500', 'text-white');
+        });
+        
+        // Handle URL parameters for search
+        function handleURLParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const location = urlParams.get('location');
+            const type = urlParams.get('type');
+            
+            if (location) {
+                const locationFilter = document.querySelector('select[data-filter="location"]');
+                if (locationFilter) {
+                    locationFilter.value = location;
+                }
+            }
+            
+            if (type) {
+                const typeFilter = document.querySelector('select[data-filter="type"]');
+                if (typeFilter) {
+                    typeFilter.value = type;
+                }
+            }
+            
+            // Trigger filtering if any parameters were set
+            if (location || type) {
+                setTimeout(() => {
+                    if (typeof filterProperties === 'function') {
+                        filterProperties();
+                    }
+                }, 100);
+            }
+        }
+        
+        // Initialize URL parameter handling
+        handleURLParams();
+        
+        // Load More Properties functionality
+        function loadMoreProperties() {
+            const grid = document.getElementById('properties-grid');
+            const currentCount = grid.children.length;
+            
+            // Sample additional properties to load
+            const additionalProperties = [
+                {
+                    id: 7,
+                    title: 'Lavington Townhouse',
+                    location: 'Lavington, Nairobi',
+                    price: 'KSH 85,000,000',
+                    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    bedrooms: 4,
+                    bathrooms: 3,
+                    area: '2800 sqft',
+                    status: 'sale',
+                    type: 'townhouse',
+                    features: ['Garden', 'Garage', 'Modern Kitchen']
+                },
+                {
+                    id: 8,
+                    title: 'CBD Office Space',
+                    location: 'CBD, Nairobi',
+                    price: 'KSH 650,000/mo',
+                    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    bedrooms: 0,
+                    bathrooms: 2,
+                    area: '1500 sqft',
+                    status: 'rent',
+                    type: 'office',
+                    features: ['AC', 'Elevator', 'Parking']
+                },
+                {
+                    id: 9,
+                    title: 'Kilimani Studio',
+                    location: 'Kilimani, Nairobi',
+                    price: 'KSH 85,000/mo',
+                    image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    bedrooms: 1,
+                    bathrooms: 1,
+                    area: '600 sqft',
+                    status: 'rent',
+                    type: 'apartment',
+                    features: ['Balcony', 'Security', 'WiFi']
+                }
+            ];
+            
+            // Add 3 more properties
+            additionalProperties.forEach(property => {
+                const propertyCard = createPropertyCard(property);
+                grid.appendChild(propertyCard);
+            });
+            
+            // Update results count
+            const resultsCount = document.getElementById('results-count');
+            if (resultsCount) {
+                resultsCount.textContent = `${currentCount + 3} Properties Found`;
+            }
+            
+            // Reinitialize feather icons
+            feather.replace();
+            
+            // Show success message
+            showNotification('3 more properties loaded successfully!', 'success');
+        }
+        
+        // Create property card function
+        function createPropertyCard(property) {
+            const card = document.createElement('div');
+            card.className = 'property-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300';
+            card.setAttribute('data-location', property.location.toLowerCase().split(',')[1].trim());
+            card.setAttribute('data-type', property.type);
+            card.setAttribute('data-status', property.status);
+            card.setAttribute('data-bedrooms', property.bedrooms);
+            
+            card.innerHTML = `
+                <div class="relative">
+                    <img src="${property.image}" alt="${property.title}" class="w-full h-64 object-cover">
+                    <div class="absolute top-4 right-4 bg-${property.status === 'sale' ? 'gold-500 text-black' : 'black text-white'} font-semibold px-3 py-1 rounded">
+                        For ${property.status === 'sale' ? 'Sale' : 'Rent'}
+                    </div>
+                    <button class="absolute bottom-4 right-4 bg-white text-gray-700 p-2 rounded-full hover:bg-gray-100 transition duration-300 favorite-btn" data-property-id="${property.id}">
+                        <i data-feather="heart" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 text-black">${property.title}</h3>
+                    <p class="text-gray-600 mb-4 flex items-center">
+                        <i data-feather="map-pin" class="mr-2 w-4 h-4"></i> 
+                        ${property.location}
+                    </p>
+                    <div class="grid grid-cols-3 gap-4 mb-4 text-center">
+                        <div>
+                            <p class="text-sm text-gray-500">${property.bedrooms > 0 ? 'Bedrooms' : 'Type'}</p>
+                            <p class="font-semibold">${property.bedrooms > 0 ? property.bedrooms : property.type}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Bathrooms</p>
+                            <p class="font-semibold">${property.bathrooms}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Area</p>
+                            <p class="font-semibold">${property.area}</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="flex flex-wrap gap-2">
+                            ${property.features.map(feature => `<span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">${feature}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <p class="text-gold-600 font-bold text-xl">${property.price}</p>
+                        <div class="flex space-x-2">
+                            <button class="text-gray-600 hover:text-gold-600 transition duration-300" onclick="addToComparison('${property.id}')">
+                                <i data-feather="plus-circle" class="w-5 h-5"></i>
+                            </button>
+                            <button class="text-gray-600 hover:text-gold-600 transition duration-300" onclick="openPropertyModal('${property.id}')">
+                                <i data-feather="eye" class="w-5 h-5"></i>
+                            </button>
+                            <a href="contact.html?property=${property.id}" class="text-gray-600 hover:text-gold-600 transition duration-300">
+                                <i data-feather="arrow-right-circle" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Make the whole card clickable
+            card.addEventListener('click', (e) => {
+                if (!e.target.closest('button') && !e.target.closest('a')) {
+                    openPropertyModal(property.id);
+                }
+            });
+            card.style.cursor = 'pointer';
+            
+            return card;
+        }
+        
+        // Enhanced property modal functionality
+        function openPropertyModal(propertyId) {
+            // Find property by ID (this would normally come from a database)
+            const allProperties = [
+                ...Array.from(document.querySelectorAll('.property-card')).map((card, index) => ({
+                    id: index + 1,
+                    title: card.querySelector('h3').textContent,
+                    location: card.querySelector('p').textContent.replace(/^\s+/, ''),
+                    price: card.querySelector('.text-gold-600').textContent,
+                    image: card.querySelector('img').src,
+                    bedrooms: card.getAttribute('data-bedrooms'),
+                    type: card.getAttribute('data-type'),
+                    status: card.getAttribute('data-status'),
+                    features: ['Modern Kitchen', 'Swimming Pool', 'Gym', 'Security'],
+                    description: 'This beautiful property offers modern living with premium amenities and stunning views. Perfect for those seeking luxury and comfort.',
+                    virtualTour: '#'
+                }))
+            ];
+            
+            const property = allProperties.find(p => p.id == propertyId);
+            if (!property) return;
+            
+            // Create modal content
+            const modalContent = `
+                <div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" id="property-modal" onclick="closePropertyModal(event)">
+                    <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+                        <div class="relative">
+                            <img src="${property.image}" alt="${property.title}" class="w-full h-64 object-cover">
+                            <button onclick="closePropertyModal()" class="absolute top-4 right-4 bg-white text-gray-700 p-2 rounded-full hover:bg-gray-100">
+                                <i data-feather="x" class="w-5 h-5"></i>
+                            </button>
+                            <div class="absolute bottom-4 left-4 bg-${property.status === 'sale' ? 'gold-500 text-black' : 'black text-white'} font-semibold px-3 py-1 rounded">
+                                For ${property.status === 'sale' ? 'Sale' : 'Rent'}
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h2 class="text-2xl font-bold text-black mb-2">${property.title}</h2>
+                                    <p class="text-gray-600 flex items-center">
+                                        <i data-feather="map-pin" class="mr-2 w-4 h-4"></i> 
+                                        ${property.location}
+                                    </p>
+                                </div>
+                                <p class="text-gold-600 font-bold text-2xl">${property.price}</p>
+                            </div>
+                            
+                            <div class="grid grid-cols-4 gap-4 mb-6 text-center">
+                                <div class="bg-gray-50 p-4 rounded">
+                                    <p class="text-sm text-gray-500">Bedrooms</p>
+                                    <p class="font-semibold text-lg">${property.bedrooms}</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded">
+                                    <p class="text-sm text-gray-500">Type</p>
+                                    <p class="font-semibold text-lg capitalize">${property.type}</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded">
+                                    <p class="text-sm text-gray-500">Status</p>
+                                    <p class="font-semibold text-lg capitalize">${property.status}</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded">
+                                    <p class="text-sm text-gray-500">Area</p>
+                                    <p class="font-semibold text-lg">2500 sqft</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h3 class="text-xl font-bold mb-3">Description</h3>
+                                <p class="text-gray-700 leading-relaxed">${property.description}</p>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h3 class="text-xl font-bold mb-3">Features</h3>
+                                <div class="grid grid-cols-2 gap-2">
+                                    ${property.features.map(feature => `
+                                        <div class="flex items-center">
+                                            <i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i>
+                                            <span>${feature}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <div class="flex space-x-4">
+                                <button onclick="scheduleViewing('${property.id}')" class="flex-1 bg-gold-500 text-black font-semibold py-3 px-6 rounded hover:bg-gold-600 transition duration-300">
+                                    Schedule Viewing
+                                </button>
+                                <button onclick="window.open('${property.virtualTour}', '_blank')" class="flex-1 bg-gray-800 text-white font-semibold py-3 px-6 rounded hover:bg-gray-900 transition duration-300">
+                                    Virtual Tour
+                                </button>
+                                <a href="contact.html?property=${property.id}" class="flex-1 bg-black text-white font-semibold py-3 px-6 rounded hover:bg-gray-800 transition duration-300 text-center">
+                                    Contact Agent
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Add modal to page
+            document.body.insertAdjacentHTML('beforeend', modalContent);
+            feather.replace();
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Close modal functionality
+        function closePropertyModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            
+            const modal = document.getElementById('property-modal');
+            if (modal) {
+                modal.remove();
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Schedule viewing functionality
+        function scheduleViewing(propertyId) {
+            closePropertyModal();
+            
+            // Create scheduling modal
+            const schedulingContent = `
+                <div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" id="scheduling-modal" onclick="closeSchedulingModal(event)">
+                    <div class="bg-white rounded-lg max-w-md w-full" onclick="event.stopPropagation()">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-xl font-bold">Schedule a Viewing</h2>
+                                <button onclick="closeSchedulingModal()" class="text-gray-500 hover:text-gray-700">
+                                    <i data-feather="x" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                            
+                            <form onsubmit="submitScheduling(event)">
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Date</label>
+                                    <input type="date" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" required>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Time</label>
+                                    <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" required>
+                                        <option value="">Select Time</option>
+                                        <option value="09:00">9:00 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="16:00">4:00 PM</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" required>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                    <input type="tel" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" required>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-gold-500 text-black font-semibold py-3 px-6 rounded-lg hover:bg-gold-600 transition duration-300">
+                                    Schedule Viewing
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', schedulingContent);
+            feather.replace();
+        }
+        
+        // Close scheduling modal
+        function closeSchedulingModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            
+            const modal = document.getElementById('scheduling-modal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+        
+        // Submit scheduling
+        function submitScheduling(event) {
+            event.preventDefault();
+            closeSchedulingModal();
+            showNotification('Viewing scheduled successfully! We will contact you soon.', 'success');
+        }
+        
+        // Request custom search functionality
+        function requestCustomSearch() {
+            const customSearchContent = `
+                <div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" id="custom-search-modal" onclick="closeCustomSearchModal(event)">
+                    <div class="bg-white rounded-lg max-w-lg w-full" onclick="event.stopPropagation()">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-xl font-bold">Request Custom Search</h2>
+                                <button onclick="closeCustomSearchModal()" class="text-gray-500 hover:text-gray-700">
+                                    <i data-feather="x" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                            
+                            <p class="text-gray-600 mb-4">Can't find what you're looking for? Let our experts help you find the perfect property.</p>
+                            
+                            <form onsubmit="submitCustomSearch(event)">
+                                <div class="grid grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Budget Range</label>
+                                        <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" required>
+                                            <option value="">Select Budget</option>
+                                            <option value="under-50m">Under KSH 50M</option>
+                                            <option value="50m-100m">KSH 50M - 100M</option>
+                                            <option value="100m-200m">KSH 100M - 200M</option>
+                                            <option value="over-200m">Over KSH 200M</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Property Type</label>
+                                        <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                                            <option value="">Any Type</option>
+                                            <option value="apartment">Apartment</option>
+                                            <option value="house">House</option>
+                                            <option value="villa">Villa</option>
+                                            <option value="office">Office</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Location</label>
+                                    <input type="text" placeholder="e.g., Westlands, Karen, Kilimani" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Special Requirements</label>
+                                    <textarea rows="3" placeholder="Tell us about any specific features or requirements..." class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"></textarea>
+                                </div>
+                                
+                                <div class="grid grid-cols-2 gap-4 mb-6">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" required>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                        <input type="tel" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" required>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-gold-500 text-black font-semibold py-3 px-6 rounded-lg hover:bg-gold-600 transition duration-300">
+                                    Submit Request
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', customSearchContent);
+            feather.replace();
+        }
+        
+        // Close custom search modal
+        function closeCustomSearchModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            
+            const modal = document.getElementById('custom-search-modal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+        
+        // Submit custom search
+        function submitCustomSearch(event) {
+            event.preventDefault();
+            closeCustomSearchModal();
+            showNotification('Custom search request submitted! Our team will contact you within 24 hours.', 'success');
+        }
+    
+        
+        // Add to comparison functionality
+        function addToComparison(propertyId) {
+            const comparison = JSON.parse(localStorage.getItem('propertyComparison') || '[]');
+            
+            if (comparison.includes(propertyId)) {
+                showNotification('Property already in comparison', 'warning');
+                return;
+            }
+            
+            if (comparison.length >= 3) {
+                showNotification('Maximum 3 properties can be compared', 'warning');
+                return;
+            }
+            
+            comparison.push(propertyId);
+            localStorage.setItem('propertyComparison', JSON.stringify(comparison));
+            showNotification('Property added to comparison', 'success');
+            
+            updateComparisonCounter();
+        }
+        
+        // Update comparison counter
+        function updateComparisonCounter() {
+            const comparison = JSON.parse(localStorage.getItem('propertyComparison') || '[]');
+            const counter = document.querySelector('.comparison-counter');
+            if (counter) {
+                counter.textContent = comparison.length;
+                counter.style.display = comparison.length > 0 ? 'block' : 'none';
+            }
+        }
+        
+        // Simple notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg text-white transition-all duration-300 ${
+                type === 'success' ? 'bg-green-500' : 
+                type === 'warning' ? 'bg-yellow-500' : 
+                type === 'error' ? 'bg-red-500' : 'bg-blue-500'
+            }`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+        
+        feather.replace();
+    </script>
+</body>
+</html>

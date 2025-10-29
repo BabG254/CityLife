@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - CityLife Real Estate Ltd | Get in Touch for Property Solutions</title>
+    <meta name="description" content="Contact CityLife Real Estate Ltd for all your property needs in Kenya. Visit our office in Nairobi, call us, or use our online contact form for inquiries.">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="shortcut icon" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-montserrat bg-white text-gray-800">
+    <custom-navbar></custom-navbar>
+
+    <!-- Hero Section -->
+    <section class="relative py-32 bg-gradient-to-r from-black via-gray-900 to-black overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Contact Us" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 container mx-auto px-4">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-6xl font-playfair font-bold text-white mb-6 reveal animate-fadeInLeft">
+                    Get In Touch
+                </h1>
+                <p class="text-xl text-gold-300 mb-8 reveal animate-fadeInLeft">
+                    Your Property Journey Starts Here
+                </p>
+                <p class="text-lg text-gray-300 mb-12 leading-relaxed reveal animate-fadeInLeft">
+                    Ready to discuss your real estate needs? Our experienced team is here to help you 
+                    find the perfect property, manage your investments, or develop your next project.
+                </p>
+                <div class="flex flex-wrap gap-4 reveal animate-fadeInLeft">
+                    <a href="tel:+254700123456" class="bg-gold-500 hover:bg-gold-600 text-black font-semibold px-6 py-3 rounded transition duration-300 inline-flex items-center">
+                        <i data-feather="phone" class="mr-2 w-4 h-4"></i>
+                        Call Now
+                    </a>
+                    <a href="mailto:info@cityliferealestate.co.ke" class="border-2 border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-black font-semibold px-6 py-3 rounded transition duration-300 inline-flex items-center">
+                        <i data-feather="mail" class="mr-2 w-4 h-4"></i>
+                        Send Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact -->
+    <section class="py-20 bg-gold-500">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="reveal animate-fadeInUp">
+                    <div class="bg-black text-white p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="phone" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-black">Call Us</h3>
+                    <p class="text-black mb-2">Speak with our agents directly</p>
+                    <a href="tel:+254700123456" class="text-black font-semibold hover:underline">+254 700 123456</a>
+                </div>
+                
+                <div class="reveal animate-fadeInUp">
+                    <div class="bg-black text-white p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="mail" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-black">Email Us</h3>
+                    <p class="text-black mb-2">Send us your inquiries</p>
+                    <a href="mailto:info@cityliferealestate.co.ke" class="text-black font-semibold hover:underline">info@cityliferealestate.co.ke</a>
+                </div>
+                
+                <div class="reveal animate-fadeInUp">
+                    <div class="bg-black text-white p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="message-circle" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-black">WhatsApp</h3>
+                    <p class="text-black mb-2">Quick chat with our team</p>
+                    <a href="https://wa.me/254700123456" class="text-black font-semibold hover:underline">Start Chat</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Info -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div class="reveal animate-fadeInLeft">
+                    <h2 class="text-3xl font-playfair font-bold mb-6 text-black">Send Us a Message</h2>
+                    <p class="text-gray-700 mb-8">
+                        Fill out the form below and we'll get back to you within 24 hours.
+                    </p>
+                    
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-gray-700 font-medium mb-2">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required 
+                                       class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-gray-700 font-medium mb-2">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required 
+                                       class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" 
+                                   class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                        </div>
+                        
+                        <div>
+                            <label for="propertyType" class="block text-gray-700 font-medium mb-2">Property Interest</label>
+                            <select id="propertyType" name="propertyType" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                                <option value="">Select Property Type</option>
+                                <option value="residential-sale">Residential - Buy</option>
+                                <option value="residential-rent">Residential - Rent</option>
+                                <option value="commercial-sale">Commercial - Buy</option>
+                                <option value="commercial-rent">Commercial - Rent</option>
+                                <option value="property-management">Property Management</option>
+                                <option value="project-development">Project Development</option>
+                                <option value="investment-consultation">Investment Consultation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="budget" class="block text-gray-700 font-medium mb-2">Budget Range</label>
+                            <select id="budget" name="budget" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                                <option value="">Select Budget Range</option>
+                                <option value="under-13m">Under KSH 13M</option>
+                                <option value="13m-32m">KSH 13M - 32M</option>
+                                <option value="32m-65m">KSH 32M - 65M</option>
+                                <option value="65m-130m">KSH 65M - 130M</option>
+                                <option value="130m-260m">KSH 130M - 260M</option>
+                                <option value="above-260m">Above KSH 260M</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="location" class="block text-gray-700 font-medium mb-2">Preferred Location</label>
+                            <select id="location" name="location" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                                <option value="">Select Location</option>
+                                <option value="nairobi">Nairobi</option>
+                                <option value="kiambu">Kiambu</option>
+                                <option value="mombasa">Mombasa</option>
+                                <option value="nakuru">Nakuru</option>
+                                <option value="thika">Thika</option>
+                                <option value="naivasha">Naivasha</option>
+                                <option value="kajiado">Kajiado</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="timeline" class="block text-gray-700 font-medium mb-2">Timeline</label>
+                            <select id="timeline" name="timeline" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                                <option value="">Select Timeline</option>
+                                <option value="immediate">Immediate (Within 1 month)</option>
+                                <option value="short-term">Short-term (1-3 months)</option>
+                                <option value="medium-term">Medium-term (3-6 months)</option>
+                                <option value="long-term">Long-term (6+ months)</option>
+                                <option value="just-browsing">Just browsing</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message *</label>
+                            <textarea id="message" name="message" rows="5" required 
+                                      placeholder="Tell us about your property needs, specific requirements, or any questions you have..."
+                                      class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"></textarea>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <input type="checkbox" id="newsletter" name="newsletter" 
+                                   class="mt-1 w-5 h-5 text-gold-600 border-gray-300 rounded focus:ring-gold-500">
+                            <label for="newsletter" class="ml-2 text-gray-700">
+                                Subscribe to our newsletter for property updates and market insights
+                            </label>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <input type="checkbox" id="privacy" name="privacy" required 
+                                   class="mt-1 w-5 h-5 text-gold-600 border-gray-300 rounded focus:ring-gold-500">
+                            <label for="privacy" class="ml-2 text-gray-700">
+                                I agree to the <a href="#" class="text-gold-600 hover:underline">Privacy Policy</a> and 
+                                <a href="#" class="text-gold-600 hover:underline">Terms of Service</a> *
+                            </label>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full btn-primary bg-gold-500 hover:bg-gold-600 text-black font-semibold py-4 px-6 rounded-lg transition duration-300 flex items-center justify-center">
+                            <i data-feather="send" class="mr-2 w-5 h-5"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="reveal animate-fadeInRight">
+                    <h2 class="text-3xl font-playfair font-bold mb-6 text-black">Contact Information</h2>
+                    
+                    <!-- Office Location -->
+                    <div class="bg-gray-50 p-6 rounded-lg mb-8">
+                        <h3 class="text-xl font-bold mb-4 text-black flex items-center">
+                            <i data-feather="map-pin" class="mr-3 text-gold-600"></i>
+                            Main Office
+                        </h3>
+                        <div class="space-y-3">
+                            <p class="text-gray-700">
+                                <strong>CityLife Real Estate Ltd</strong><br>
+                                Westlands Business Center<br>
+                                3rd Floor, Suite 305<br>
+                                Nairobi 00200, Kenya
+                            </p>
+                            <div class="flex items-center text-gray-700">
+                                <i data-feather="clock" class="mr-2 w-4 h-4 text-gold-600"></i>
+                                <div>
+                                    <p><strong>Business Hours:</strong></p>
+                                    <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                                    <p>Saturday: 9:00 AM - 4:00 PM</p>
+                                    <p>Sunday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Details -->
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-gold-100 p-3 rounded-full mr-4">
+                                <i data-feather="phone" class="text-gold-600 w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-black mb-2">Phone Numbers</h4>
+                                <p class="text-gray-700">Main: <a href="tel:+254700123456" class="text-gold-600 hover:underline">+254 700 123456</a></p>
+                                <p class="text-gray-700">Sales: <a href="tel:+254700123457" class="text-gold-600 hover:underline">+254 700 123457</a></p>
+                                <p class="text-gray-700">Property Mgmt: <a href="tel:+254700123458" class="text-gold-600 hover:underline">+254 700 123458</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-gold-100 p-3 rounded-full mr-4">
+                                <i data-feather="mail" class="text-gold-600 w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-black mb-2">Email Addresses</h4>
+                                <p class="text-gray-700">General: <a href="mailto:info@cityliferealestate.co.ke" class="text-gold-600 hover:underline">info@cityliferealestate.co.ke</a></p>
+                                <p class="text-gray-700">Sales: <a href="mailto:sales@cityliferealestate.co.ke" class="text-gold-600 hover:underline">sales@cityliferealestate.co.ke</a></p>
+                                <p class="text-gray-700">Support: <a href="mailto:support@cityliferealestate.co.ke" class="text-gold-600 hover:underline">support@cityliferealestate.co.ke</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-gold-100 p-3 rounded-full mr-4">
+                                <i data-feather="globe" class="text-gold-600 w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-black mb-2">Online</h4>
+                                <p class="text-gray-700">Website: <a href="#" class="text-gold-600 hover:underline">www.cityliferealestate.co.ke</a></p>
+                                <div class="flex space-x-3 mt-2">
+                                    <a href="#" class="text-gold-600 hover:text-gold-700 transition duration-300">
+                                        <i data-feather="facebook" class="w-5 h-5"></i>
+                                    </a>
+                                    <a href="#" class="text-gold-600 hover:text-gold-700 transition duration-300">
+                                        <i data-feather="twitter" class="w-5 h-5"></i>
+                                    </a>
+                                    <a href="#" class="text-gold-600 hover:text-gold-700 transition duration-300">
+                                        <i data-feather="linkedin" class="w-5 h-5"></i>
+                                    </a>
+                                    <a href="#" class="text-gold-600 hover:text-gold-700 transition duration-300">
+                                        <i data-feather="instagram" class="w-5 h-5"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Contact -->
+                    <div class="bg-red-50 border-l-4 border-red-500 p-6 mt-8">
+                        <h4 class="font-bold text-red-800 mb-2 flex items-center">
+                            <i data-feather="alert-circle" class="mr-2 w-5 h-5"></i>
+                            Emergency Contact
+                        </h4>
+                        <p class="text-red-700 mb-4">
+                            For property emergencies (security, maintenance issues, etc.):<br>
+                            <strong>24/7 Hotline: <a href="tel:+254700999999" class="underline">+254 700 999999</a></strong>
+                        </p>
+                        <button onclick="callEmergency()" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition duration-300">
+                            Call Emergency Line
+                        </button>
+                    </div>
+                    
+                    <!-- Quick Action Buttons -->
+                    <div class="mt-8 space-y-4">
+                        <h4 class="font-bold text-black mb-4">Quick Actions</h4>
+                        
+                        <button onclick="scheduleCallback()" class="w-full bg-gold-500 text-black font-semibold py-3 px-4 rounded-lg hover:bg-gold-600 transition duration-300 flex items-center justify-center">
+                            <i data-feather="phone-call" class="mr-2 w-5 h-5"></i>
+                            Schedule a Callback
+                        </button>
+                        
+                        <button onclick="openWhatsApp()" class="w-full bg-green-500 text-white font-semibold py-3 px-4 rounded-lg hover:bg-green-600 transition duration-300 flex items-center justify-center">
+                            <i data-feather="message-circle" class="mr-2 w-5 h-5"></i>
+                            Chat on WhatsApp
+                        </button>
+                        
+                        <a href="properties.html" class="block w-full bg-black text-white font-semibold py-3 px-4 rounded-lg hover:bg-gray-800 transition duration-300 flex items-center justify-center">
+                            <i data-feather="home" class="mr-2 w-5 h-5"></i>
+                            Browse Properties
+                        </a>
+                        
+                        <button onclick="requestValuation()" class="w-full border-2 border-gold-500 text-gold-600 font-semibold py-3 px-4 rounded-lg hover:bg-gold-500 hover:text-black transition duration-300 flex items-center justify-center">
+                            <i data-feather="trending-up" class="mr-2 w-5 h-5"></i>
+                            Request Property Valuation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 reveal animate-fadeInUp">
+                <h2 class="text-3xl font-playfair font-bold mb-6 text-black">Find Our Office</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Visit us at our convenient Westlands location, easily accessible by car or public transport.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Map -->
+                <div class="lg:col-span-2 reveal animate-fadeInLeft">
+                    <div class="bg-gray-300 h-96 rounded-lg flex items-center justify-center relative overflow-hidden">
+                        <!-- Placeholder for Google Maps -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-gold-400 to-gold-600 opacity-20"></div>
+                        <div class="text-center z-10">
+                            <i data-feather="map-pin" class="w-16 h-16 text-gray-600 mx-auto mb-4"></i>
+                            <p class="text-gray-600 font-medium">Interactive Map</p>
+                            <p class="text-sm text-gray-500">Google Maps will be integrated here</p>
+                        </div>
+                        
+                        <!-- In a real implementation, you would embed Google Maps like this: -->
+                        <!-- 
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8195234794673!2d36.8077!3d-1.2642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTUnNTEuMSJTIDM2wrA0OCcyNy43IkU!5e0!3m2!1sen!2ske!4v1234567890"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                        -->
+                    </div>
+                </div>
+
+                <!-- Directions & Transport -->
+                <div class="reveal animate-fadeInRight">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-4 text-black">Directions & Transport</h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-medium text-gray-800 flex items-center mb-2">
+                                    <i data-feather="car" class="mr-2 w-4 h-4 text-gold-600"></i>
+                                    By Car
+                                </h4>
+                                <p class="text-sm text-gray-700">
+                                    Free parking available in the building basement. 
+                                    GPS Coordinates: -1.2642, 36.8077
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-medium text-gray-800 flex items-center mb-2">
+                                    <i data-feather="truck" class="mr-2 w-4 h-4 text-gold-600"></i>
+                                    Public Transport
+                                </h4>
+                                <p class="text-sm text-gray-700">
+                                    Matatu routes 46, 102, 111 stop nearby. 
+                                    Westlands roundabout is 200m away.
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-medium text-gray-800 flex items-center mb-2">
+                                    <i data-feather="map" class="mr-2 w-4 h-4 text-gold-600"></i>
+                                    Landmarks
+                                </h4>
+                                <p class="text-sm text-gray-700">
+                                    Opposite Sarit Centre, next to Westlands Police Station. 
+                                    Visible from Waiyaki Way.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 space-y-2">
+                            <a href="https://maps.google.com/?q=-1.2642,36.8077" target="_blank" 
+                               class="block w-full bg-gold-500 hover:bg-gold-600 text-black font-semibold py-2 px-4 rounded text-center transition duration-300">
+                                Open in Google Maps
+                            </a>
+                            <a href="tel:+254700123456" 
+                               class="block w-full border-2 border-gold-500 text-gold-600 hover:bg-gold-500 hover:text-black font-semibold py-2 px-4 rounded text-center transition duration-300">
+                                Call for Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal animate-fadeInUp">
+                <h2 class="text-3xl font-playfair font-bold mb-6 text-black">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Quick answers to common questions about our services
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="bg-gray-50 rounded-lg reveal animate-fadeInUp">
+                        <button class="faq-button w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(this)">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-medium text-black">What areas do you serve in Kenya?</h3>
+                                <i data-feather="chevron-down" class="w-5 h-5 text-gray-500 transform transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6">
+                            <p class="text-gray-700">
+                                We provide real estate services across Kenya, with primary focus on Nairobi, Kiambu, 
+                                Mombasa, Nakuru, Thika, Naivasha, and Kajiado. We also handle projects in other areas 
+                                upon request.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="bg-gray-50 rounded-lg reveal animate-fadeInUp">
+                        <button class="faq-button w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(this)">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-medium text-black">How long does the property buying process take?</h3>
+                                <i data-feather="chevron-down" class="w-5 h-5 text-gray-500 transform transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6">
+                            <p class="text-gray-700">
+                                The property buying process typically takes 30-90 days depending on financing, legal checks, 
+                                and documentation. We guide you through each step to ensure a smooth transaction.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="bg-gray-50 rounded-lg reveal animate-fadeInUp">
+                        <button class="faq-button w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(this)">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-medium text-black">Do you provide property management services?</h3>
+                                <i data-feather="chevron-down" class="w-5 h-5 text-gray-500 transform transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6">
+                            <p class="text-gray-700">
+                                Yes, we offer comprehensive property management services including tenant screening, 
+                                rent collection, maintenance coordination, and financial reporting for property owners.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="bg-gray-50 rounded-lg reveal animate-fadeInUp">
+                        <button class="faq-button w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(this)">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-medium text-black">What are your consultation fees?</h3>
+                                <i data-feather="chevron-down" class="w-5 h-5 text-gray-500 transform transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6">
+                            <p class="text-gray-700">
+                                Initial consultations are free. We only charge when you engage our services. 
+                                Our fee structure is transparent and competitive within the market.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="bg-gray-50 rounded-lg reveal animate-fadeInUp">
+                        <button class="faq-button w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(this)">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-medium text-black">Can you help with property financing?</h3>
+                                <i data-feather="chevron-down" class="w-5 h-5 text-gray-500 transform transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6">
+                            <p class="text-gray-700">
+                                While we don't provide direct financing, we work with trusted banking partners and 
+                                can connect you with mortgage brokers to help secure the best financing options for your needs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-black text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto reveal animate-fadeInUp">
+                <h2 class="text-4xl font-playfair font-bold mb-6">Ready to Start Your Property Journey?</h2>
+                <p class="text-xl text-gray-300 mb-8">
+                    Don't wait any longer. Contact us today and let's discuss how we can help you achieve your real estate goals.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact-form" class="bg-gold-500 hover:bg-gold-600 text-black font-semibold px-8 py-4 rounded transition duration-300">
+                        Book Free Consultation
+                    </a>
+                    <a href="properties.html" class="border-2 border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-black font-semibold px-8 py-4 rounded transition duration-300">
+                        Browse Properties
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/254700123456" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 z-50 no-print">
+        <i data-feather="message-circle" class="w-6 h-6"></i>
+    </a>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        // Handle property-specific contact forms
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const propertyId = urlParams.get('property');
+            
+            if (propertyId) {
+                // Pre-fill form for property inquiry
+                const subjectField = document.querySelector('select[name="subject"]');
+                const messageField = document.querySelector('textarea[name="message"]');
+                
+                if (subjectField) {
+                    subjectField.value = 'property-inquiry';
+                }
+                
+                if (messageField) {
+                    messageField.value = `I am interested in property ID: ${propertyId}. Please provide more information about this property.`;
+                }
+                
+                // Add property reference to form
+                const form = document.querySelector('#contact-form');
+                if (form) {
+                    const propertyInput = document.createElement('input');
+                    propertyInput.type = 'hidden';
+                    propertyInput.name = 'property_id';
+                    propertyInput.value = propertyId;
+                    form.appendChild(propertyInput);
+                }
+                
+                // Show property inquiry notification
+                showPropertyInquiryBanner(propertyId);
+            }
+            
+            // Initialize contact form functionality
+            initializeContactForm();
+            initializeQuickActions();
+        });
+        
+        // Show property inquiry banner
+        function showPropertyInquiryBanner(propertyId) {
+            const banner = document.createElement('div');
+            banner.className = 'bg-gold-100 border border-gold-500 text-gold-800 px-6 py-4 rounded-lg mb-6';
+            banner.innerHTML = `
+                <div class="flex items-center">
+                    <i data-feather="info" class="w-5 h-5 mr-3"></i>
+                    <div>
+                        <h4 class="font-semibold">Property Inquiry</h4>
+                        <p class="text-sm">You're inquiring about Property ID: ${propertyId}. Our form has been pre-filled for your convenience.</p>
+                    </div>
+                </div>
+            `;
+            
+            const formSection = document.querySelector('#contact-form').closest('div');
+            formSection.insertBefore(banner, formSection.firstChild);
+            feather.replace();
+        }
+        
+        // Initialize contact form
+        function initializeContactForm() {
+            const form = document.getElementById('contact-form');
+            if (form) {
+                form.addEventListener('submit', handleFormSubmission);
+            }
+        }
+        
+        // Handle form submission
+        function handleFormSubmission(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Show loading state
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                showNotification('Message sent successfully! We will get back to you within 24 hours.', 'success');
+                event.target.reset();
+                
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
+                // Log form data (in real app, this would be sent to server)
+                console.log('Form submitted:', data);
+            }, 2000);
+        }
+        
+        // Initialize quick actions
+        function initializeQuickActions() {
+            // Emergency contact functionality
+            const emergencyLinks = document.querySelectorAll('a[href*="tel:+254700999999"]');
+            emergencyLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (!confirm('Do you want to call our emergency line now?')) {
+                        e.preventDefault();
+                    }
+                });
+            });
+            
+            // WhatsApp quick contact enhancement
+            const whatsappBtn = document.querySelector('a[href*="wa.me"]');
+            if (whatsappBtn) {
+                whatsappBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const message = encodeURIComponent('Hi! I would like to inquire about your properties and services.');
+                    window.open(`https://wa.me/254700123456?text=${message}`, '_blank');
+                });
+            }
+        }
+        
+        // Call emergency function
+        function callEmergency() {
+            if (confirm('This will call our 24/7 emergency hotline. Continue?')) {
+                window.location.href = 'tel:+254700999999';
+            }
+        }
+        
+        // Schedule callback functionality
+        function scheduleCallback() {
+            const callbackContent = `
+                <div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" id="callback-modal" onclick="closeCallbackModal(event)">
+                    <div class="bg-white rounded-lg max-w-md w-full" onclick="event.stopPropagation()">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-xl font-bold">Schedule a Callback</h2>
+                                <button onclick="closeCallbackModal()" class="text-gray-500 hover:text-gray-700">
+                                    <i data-feather="x" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                            
+                            <form onsubmit="submitCallback(event)">
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" required>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                    <input type="tel" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" required>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Time</label>
+                                    <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" required>
+                                        <option value="">Select Time</option>
+                                        <option value="morning">Morning (9 AM - 12 PM)</option>
+                                        <option value="afternoon">Afternoon (12 PM - 5 PM)</option>
+                                        <option value="evening">Evening (5 PM - 8 PM)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">What would you like to discuss?</label>
+                                    <textarea rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" placeholder="Brief description of your inquiry..."></textarea>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-gold-500 text-black font-semibold py-3 px-6 rounded-lg hover:bg-gold-600 transition duration-300">
+                                    Schedule Callback
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', callbackContent);
+            feather.replace();
+        }
+        
+        // Close callback modal
+        function closeCallbackModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            
+            const modal = document.getElementById('callback-modal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+        
+        // Submit callback request
+        function submitCallback(event) {
+            event.preventDefault();
+            closeCallbackModal();
+            showNotification('Callback scheduled successfully! We will call you at your preferred time.', 'success');
+        }
+        
+        // Open WhatsApp function
+        function openWhatsApp() {
+            const message = encodeURIComponent('Hi! I would like to inquire about your real estate services. Can you help me?');
+            window.open(`https://wa.me/254700123456?text=${message}`, '_blank');
+        }
+        
+        // Request valuation functionality
+        function requestValuation() {
+            const valuationContent = `
+                <div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" id="valuation-modal" onclick="closeValuationModal(event)">
+                    <div class="bg-white rounded-lg max-w-lg w-full max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-xl font-bold">Request Property Valuation</h2>
+                                <button onclick="closeValuationModal()" class="text-gray-500 hover:text-gray-700">
+                                    <i data-feather="x" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                            
+                            <p class="text-gray-600 mb-4">Get a professional property valuation from our certified experts.</p>
+                            
+                            <form onsubmit="submitValuation(event)">
+                                <div class="grid grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Property Type</label>
+                                        <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" required>
+                                            <option value="">Select Type</option>
+                                            <option value="residential">Residential</option>
+                                            <option value="commercial">Commercial</option>
+                                            <option value="land">Land</option>
+                                            <option value="industrial">Industrial</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Purpose</label>
+                                        <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" required>
+                                            <option value="">Select Purpose</option>
+                                            <option value="sale">For Sale</option>
+                                            <option value="mortgage">Mortgage</option>
+                                            <option value="insurance">Insurance</option>
+                                            <option value="legal">Legal Purposes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Property Address</label>
+                                    <input type="text" placeholder="Full property address" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" required>
+                                </div>
+                                
+                                <div class="grid grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Size (sq ft)</label>
+                                        <input type="number" placeholder="e.g., 2500" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Year Built</label>
+                                        <input type="number" placeholder="e.g., 2020" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Additional Details</label>
+                                    <textarea rows="3" placeholder="Any special features, recent renovations, etc." class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"></textarea>
+                                </div>
+                                
+                                <div class="grid grid-cols-2 gap-4 mb-6">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" required>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                        <input type="tel" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-gold-50 p-4 rounded-lg mb-6">
+                                    <p class="text-sm text-gold-800">
+                                        <strong>Valuation Fee:</strong> KSH 15,000 - 50,000 (depending on property type and size)
+                                        <br>A detailed report will be provided within 5-7 business days.
+                                    </p>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-gold-500 text-black font-semibold py-3 px-6 rounded-lg hover:bg-gold-600 transition duration-300">
+                                    Request Valuation
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', valuationContent);
+            feather.replace();
+        }
+        
+        // Close valuation modal
+        function closeValuationModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            
+            const modal = document.getElementById('valuation-modal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+        
+        // Submit valuation request
+        function submitValuation(event) {
+            event.preventDefault();
+            closeValuationModal();
+            showNotification('Valuation request submitted! We will contact you within 24 hours to schedule the assessment.', 'success');
+        }
+        
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg text-white transition-all duration-300 ${
+                type === 'success' ? 'bg-green-500' : 
+                type === 'warning' ? 'bg-yellow-500' : 
+                type === 'error' ? 'bg-red-500' : 'bg-blue-500'
+            }`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => notification.remove(), 300);
+            }, 5000);
+        }
+        
+        // FAQ functionality
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i[data-feather="chevron-down"]');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Smooth scroll to form
+        document.querySelectorAll('a[href="#contact-form"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('contact-form').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        feather.replace();
+    </script>
+</body>
+</html>
